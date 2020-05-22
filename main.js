@@ -7,6 +7,7 @@ $(document).ready(function(){
   $('.icon').click(function() {
   //creo una variabile per salvare l'input dell'utente
   var input_utente = $('input').val();
+  //chiamata ajax dell'api
     $.ajax({
       'url':'https://api.themoviedb.org/3/search/movie',
       'method':'GET',
@@ -17,12 +18,30 @@ $(document).ready(function(){
 
        },
        'success': function (data) {
-         console.log(data);
+         var infofilm = data.results;
+         console.log(infofilm);
+         stampahtml(infofilm);
        },
        'error': function () {
          alert('si è verificato un errore');
        }
 
      });
+     function stampahtml(info_film) {
+             var schedadisco = $('#template').html();
+             var template_function = Handlebars.compile(schedadisco);
+
+             for (var i = 0; i < info_film.length; i++) {
+                 var info= info_film[i];
+                 var film = {
+                     'titolo-film': info.title,
+                     'titolo-original' : info.original_title,
+                     'lingua': info.original_language,
+                     'voto': info.vote_average,
+                 }
+                 var html_finale = template_function(film);
+                 $('.film-container.container').append(html_finale);
+             }
+            }
    });
   });
