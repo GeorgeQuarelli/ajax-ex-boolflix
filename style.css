@@ -96,7 +96,7 @@ header img {
     justify-content: center;
     flex-wrap: wrap;
     padding: 100px 0;
-    margin: 10px;
+    padding-right: 30px;
 }
 
 .film-container h3 {
