@@ -93,11 +93,10 @@ header img {
 }
 
 .film-container {
-    display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     padding: 100px 0;
+    margin: 10px;
 }
 
 .film-container h3 {
