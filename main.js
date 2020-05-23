@@ -28,8 +28,8 @@ $(document).ready(function(){
 
      });
      function stampahtml(info_film) {
-             var schedadisco = $('#template').html();
-             var template_function = Handlebars.compile(schedadisco);
+             var schedafilm = $('#template').html();
+             var template_function = Handlebars.compile(schedafilm);
 
              for (var i = 0; i < info_film.length; i++) {
                  var info= info_film[i];
