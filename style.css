@@ -91,6 +91,12 @@ header img {
     height: 50px;
     margin-top: 10px;
 }
+.card{
+  background-color: #1f1e2d;
+  margin: 2px;
+  padding: 25px;
+  border-radius: 8px;
+}
 
 .film-container {
     justify-content: center;
