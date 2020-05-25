@@ -83,10 +83,24 @@ $(document).ready(function(){
                          'titolo-film': titolo,
                          'titolo-original' : titolo_originale,
                          'lingua': info.original_language,
-                         'voto': info.vote_average,
+                         'voto': Stelle(info.vote_average),
                      }
                      var html_finale = template_function(film);
                      $('.film-container.container').append(html_finale);
                  }
                 }
+
+          function Stelle(voto) {
+          // convero il vodo da 10 a 5
+          var nuovo_voto = Math.ceil(voto/2);
+          var stelle = "";
+          for (var i = 1; i <= 5; i++) {
+              if(i <= nuovo_voto){
+        			stelle += '<i class="fas fa-star yellow"></i>';
+            } else {
+        			stelle += '<i class="far fa-star yellow"></i>';
+            }
+          }
+          return stelle;
+          }
   });
