@@ -8,12 +8,14 @@ $(document).ready(function(){
   $('#search').keyup(function(event){
     if(event.which == 13) {
     ricercalista();
+    reset();
     }
   });
 
   //intercetto il click sull'icona del cerca
   $('.icon').click(function() {
     ricercalista();
+    reset();
 });
 
 
@@ -30,13 +32,6 @@ $(document).ready(function(){
           //creo una variabile per salvare l'input dell'utente
           //trim serve ad eliminare gli spazi prima e dopo all input utente
           var input_utente = $('input').val().trim();
-
-          //resetto l'input dell'utente
-          $('input').val('');
-
-          //svuoto il contenitore dei risultati
-          $('.film-container.container').empty();
-
           //chiamata ajax
           $.ajax({
             'url':url,
@@ -48,8 +43,8 @@ $(document).ready(function(){
              },
              'success': function (data) {
                var infofilm = data.results;
-               console.log(infofilm);
-               stampahtml(infofilm);
+               console.log(infofilm, genere);
+               stampahtml(infofilm, genere);
              },
              'error': function () {
                alert('devi insterire un film');
@@ -57,6 +52,16 @@ $(document).ready(function(){
            });
         }
 
+
+        // funzione di reset del box di ricerca e contenuto pagina
+        function reset(){
+          //resetto l'input dell'utente
+          $('input').val('');
+
+          //svuoto il contenitore dei risultati
+          $('.film-container.container').empty();
+
+        }
 
       //funzione per stampare le card dei film in pagina
          function stampahtml(info_film, genere) {
