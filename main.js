@@ -82,15 +82,15 @@ $(document).ready(function(){
                      var film = {
                          'titolo-film': titolo,
                          'titolo-original' : titolo_originale,
-                         'lingua': info.original_language,
-                         'voto': Stelle(info.vote_average),
+                         'lingua': flag(info.original_language),
+                         'voto': stelle(info.vote_average),
                      }
                      var html_finale = template_function(film);
                      $('.film-container.container').append(html_finale);
                  }
                 }
 
-          function Stelle(voto) {
+          function stelle(voto) {
           // converto il vodo da 10 a 5
           var nuovo_voto = Math.ceil(voto/2);
           var stelle = "";
@@ -102,5 +102,14 @@ $(document).ready(function(){
             }
           }
           return stelle;
+          }
+
+          function flag(lingua) {
+            var lingue = ['it','en','fr','de','es']
+            if (lingue.includes(lingua)) {
+            return '<img src="img/flag_'+ lingua +'.png">'
+            } else {
+              return lingua;
+            }
           }
   });

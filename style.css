@@ -113,16 +113,22 @@ header img {
 }
 
 .film-container span.titolo-original {
+    display: flex;
+    flex-wrap: wrap;
     color: #a1a1a1;
     font-size: 20px;
 }
 
 .film-container span.lingua {
     color: #a1a1a1;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .film-container span.voto {
     color: yellow;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .yellow {
