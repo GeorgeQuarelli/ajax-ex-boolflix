@@ -91,14 +91,14 @@ $(document).ready(function(){
                 }
 
           function Stelle(voto) {
-          // convero il vodo da 10 a 5
+          // converto il vodo da 10 a 5
           var nuovo_voto = Math.ceil(voto/2);
           var stelle = "";
           for (var i = 1; i <= 5; i++) {
               if(i <= nuovo_voto){
         			stelle += '<i class="fas fa-star yellow"></i>';
             } else {
-        			stelle += '<i class="far fa-star yellow"></i>';
+        			stelle += '<i class="far fa-star"></i>';
             }
           }
           return stelle;
