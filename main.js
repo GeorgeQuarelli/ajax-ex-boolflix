@@ -7,6 +7,10 @@ $(document).ready(function(){
   $('.icon').click(function() {
   //creo una variabile per salvare l'input dell'utente
   var input_utente = $('input').val();
+  //resetto l'input dell'utente
+  $('input').val('');
+  //svuoto il contenitore dei risultati
+  $('.film-container.container').empty();
   //chiamata ajax dell'api
     $.ajax({
       'url':'https://api.themoviedb.org/3/search/movie',
@@ -23,7 +27,7 @@ $(document).ready(function(){
          stampahtml(infofilm);
        },
        'error': function () {
-         alert('si è verificato un errore');
+         alert('devi insterire un film');
        }
 
      });
