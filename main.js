@@ -16,6 +16,7 @@ $(document).ready(function(){
     ricerca();
 });
 
+
   //creo una funzione che include chiamata ajax e compilazione handlebars
   function ricerca() {
     //creo una variabile per salvare l'input dell'utente
