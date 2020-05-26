@@ -84,6 +84,7 @@ $(document).ready(function(){
                          'titolo-original' : titolo_originale,
                          'lingua': flag(info.original_language),
                          'voto': stelle(info.vote_average),
+                         'locandina':locandina(info.poster_path)
                      }
                      var html_finale = template_function(film);
                      $('.film-container.container').append(html_finale);
@@ -96,7 +97,7 @@ $(document).ready(function(){
           var stelle = "";
           for (var i = 1; i <= 5; i++) {
               if(i <= nuovo_voto){
-        			stelle += '<i class="fas fa-star yellow"></i>';
+        			stelle += '<i class="fas fa-star"></i>';
             } else {
         			stelle += '<i class="far fa-star"></i>';
             }
@@ -105,6 +106,7 @@ $(document).ready(function(){
           }
 
           function flag(lingua) {
+            //seleziono le lingue che intendo convertire con l'immagine
             var lingue = ['it','en','fr','de','es']
             if (lingue.includes(lingua)) {
             return '<img src="img/flag_'+ lingua +'.png">'
@@ -112,4 +114,12 @@ $(document).ready(function(){
               return lingua;
             }
           }
+
+          //funzione per generare la locandina se nel caso non trovasse
+          //la locandina genera un img di errore
+         function locandina(img) {
+             if (img === null) {
+                 return 'img/error.jpg'
+             } return 'https://image.tmdb.org/t/p/w342' + img
+         }
   });
