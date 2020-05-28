@@ -84,7 +84,8 @@ $(document).ready(function(){
                          'titolo-original' : titolo_originale,
                          'lingua': flag(info.original_language),
                          'voto': stelle(info.vote_average),
-                         'locandina':locandina(info.poster_path)
+                         'locandina':locandina(info.poster_path),
+                         'trama': info.overview
                      }
                      var html_finale = template_function(film);
                      $('.film-container.container').append(html_finale);

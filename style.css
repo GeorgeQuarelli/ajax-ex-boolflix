@@ -103,6 +103,8 @@ header img {
   margin: 2px;
   padding: 25px;
   border-radius: 8px;
+  width: 400px;
+  height: 570px;
 }
 
 .film-container {
@@ -117,6 +119,11 @@ header img {
     color: white;
     font-size: 15px;
     text-transform: uppercase;
+}
+
+.film-container p {
+    margin-top: 20px;
+    color: white;
 }
 
 .film-container span.titolo-original {
@@ -155,4 +162,16 @@ header img {
 .locandina {
     max-width: 100%;
     height: auto;
+}
+
+#info {
+  display: none;
+}
+
+.card:hover #locandina-container {
+  display: none;
+}
+
+.card:hover #info {
+  display: block;
 }
